@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+/* In case we've installed a certain font in our computer and want to use it:
+
+      @font-face {
+            font-family: "Booter - Zero Zero";
+            src: url("");
+      }
+
+*/
+
+* {
+      box-sizing: border-box;
+      font-family: Raleway;
+      color: #777; /* font color of our webpage */
+}
+
+body {
+      margin: 0; /* Every html element has some default styling properties such has 'margins' etc. so if we want zero-margins then we have to specify it separately */
+}
+
+.main-header {
+      background-image: url("1d.jpg");
+      background-size: cover;
+      background-color: rgba(0, 0, 0, 0.2);
+      /* by default we can only use either background image or background color to use both we use background-blend-mode to use different backgrounds together */
+      background-blend-mode: multiply;
+}
+
+.nav ul {
+      /* so that all the normal ul still have margin not equal to zero...only the nav ul */
+      margin: 0; /* all html elements have some default styling properties and even if we've already set margin of html and body to zero,there are other html elements also,
+      so if we want zero margins then we have to specify them separately */
+      padding-left: 0; /* this is because there is default left-padding in <ul> */
+}
+
+.nav li {
+      display: inline; /* to display the navigation links in the same line.... we will use this style in (.nav li) because it is the property of <li> elements that they are in separate
+      lines................ if we don't use this and only use "inline-block" display in <a> then it will treat every <a> as blocks ie. will cover the whole width of the page and so these
+      */
+
+}
+
+.nav a { /*this is to style the links */
+      /* inline elements (here, <a>) cannot apply padding at the top and bottom, so we use inline-block..... it itself doesn't have any effect but lets us use the
+      padding style to apply it at the top and bottom.............. we will use this 'inline-block' style under (.nav a) because we are using padding under this selector only */
+      display: inline-block;
+      color: white;
+      padding: .4em .7em .4em .7em;
+      text-decoration: none; /* this is for removing the undeline (b/c of them being a link) */
+}
+
+.nav a:hover {
+      background-color: rgba(255, 255, 255, .3); /* this is the background-color which will appear when we point our cursor on the links and it will cover the entire background of each
+      link ie. the padding area*/
+}
+
+.main-nav {
+      text-align: center; /* to align the links in the center */
+      font-size: 1.3em; /* font size of the links */
+      font-weight: lighter; /* thickness of the font */
+      border-bottom: 1px solid rgba(255, 255, 255, 0.3); /* this is what we've replaced our <hr> tag with */
+}
+
+.band-name {
+      text-align: center;
+      font-size: 4em;
+      font-weight: normal;
+      color: rgba(255, 255, 255, 0.7);
+}
+
+.band-name-large {
+      /* In case of padding, the first argument is for padding from top and bottom and second argument is for padding from left and right and if only one argument is given then
+      it is for all 4 sides and if we give 4 arguments then the order is- top, right, bottom, left */
+      padding-top: 1.5em;
+      padding-bottom: .5em;
+      font-size: 8em;
+}
+
+.main-header h1 {
+      margin: 0; /* for band-name */
+}
+
+.container {
+      max-width: 900px; /* this is the max width possible of our content, ie if the width of our webpage is increased then as the width of our content exceeds 900 pixels, rest of the content
+      will be shifted to the next line */
+      margin: 1em auto; /* here we've given 'auto' as for padding from left and right........this tells it that we want our left and right margins to be as large as they need to be and be
+      exactly the same so that text will always be in the center */
+}
+
+.container p {
+      margin: 0; /* for paragraphs */
+}
+
+.about-band-image {
+      float: left; /* to make text written around the image */
+      margin: 1em; /* to give space between image and text*/
+      border-radius: 50%; /* to give cicle shape to our image */
+}
+
+h3 {
+      margin: 0; /* for band-name in footer */
+}
+
+.main-footer { /* similar to .main-header */
+      background-color: #56CCF2;
+      display: flex;
+      align-items: center;
+}
+
+.main-footer .nav {
+      margin: 0;
+      padding-left: 0;
+      margin-left: auto; /* margin-auto lets the browser decide the left margin for us......in this case, since the left side is already consumed so browser will make the content at the
+      extreme-right */
+      /*OR we can also say it as margin-right: 0; */
+      font-size: 1.2em;
+}
+
+.button {
+      text-align: center;
+      vertical-align: middle;
+      padding: .25em;
+      cursor: pointer;
+}
+
+.main-button {
+      margin: .5em 15% 2em 15%;
+      color: white;
+      border: 2px solid blue;
+      background-color: rgba(255, 255, 255, 0.1);
+      font-size: 1.2em;
+      font-weight: lighter;
+      padding: 0 2em;
+}
+
+.main-button:hover {
+      background-color: rgba(255, 255, 255, 0.3);
+}
